@@ -1,0 +1,107 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 64px;
+
+    background: #040A0A;
+    color: #fff;
+
+    user-select: none ;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    padding: 48px;
+
+    border-radius: 16px;
+    background: #080e11 url(../../assets/ellipse.svg) no-repeat 0 -150px / 700px;
+
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.reset{
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+
+    border: 1px solid #fff;
+    border-radius: 100px;
+
+    width: 100%;
+    padding: 16px;
+}
+
+.reset:hover{
+    border: 1px solid #adff2f;
+    color: #adff2f;
+    cursor: pointer;
+}
+
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+
+    width: 100%;
+    max-width: 500px;
+}
+
+.card{
+    position: relative;
+
+    width: 130px;
+    height: 130px;
+    background: #FCEE2D;
+
+    font-size: 40px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotateX(180deg);
+    transition: 0.25s;
+
+    cursor: pointer;
+}
+
+.card::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #8461F2;
+    backface-visibility: hidden;
+
+    border-radius: 8px;
+
+    transition: 0.25s;
+    transform: rotate(0deg);
+}
+
+.card.boxOpen{
+    transform: rotate(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after{
+    transform: rotateY(180deg);
+}
+
+p{
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+}
